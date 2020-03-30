@@ -10,7 +10,10 @@ function App() {
           className="App-logo"
           alt="logo"
         />
-        <p>Docker App - Using Create React App</p>
+        <p>
+          Docker App - Using Create React App, Docker, Travis &amp; Elastic
+          Beanstalk
+        </p>
       </header>
     </div>
   );
