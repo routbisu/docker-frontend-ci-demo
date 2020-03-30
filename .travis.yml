@@ -6,4 +6,14 @@ before_install:
   - docker build -t routbisu/docker-fe -f Dockerfile.dev .
 
 script:
-  - docker run routbisu/docker-fe npm run test -- --coverage
+  - docker run -e CI=true routbisu/docker-fe npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "docker-react"
+  env: "docker-react"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-219248317614"
+  bucket_path: "docker-react"
+  on:
+    branch: "master"
