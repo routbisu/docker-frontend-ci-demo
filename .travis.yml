@@ -9,6 +9,7 @@ script:
   - docker run -e CI=true routbisu/docker-fe npm run test
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: "ap-southeast-1"
   app: "docker-react"
@@ -17,3 +18,5 @@ deploy:
   bucket_path: "docker-react"
   on:
     branch: "master"
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_ACCESS_KEY"
